@@ -16,7 +16,7 @@ Compared to Cilium Quick Start:
 
 With the cluster up and running the next thing we need to do is update our local [kubeconfig][kubeconfig docs], so we can connect to the cluster when we use `kubectl` (and `k9s` if you choose to).
 
-### Install Cilium {#install-cilium}
+### Install Cilium
 
 
 
