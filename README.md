@@ -19,12 +19,13 @@ This repository represents the culmination of that work, so that others can repl
 |  Cilium  | e-BPF Container Network Interface                    | [Site][cilium site], [Docs][cilium docs] |
 | Tetragon | e-BPF Security observability and runtime enforcement |                    [Docs][tetragon docs] |
 
-| Local Tools | Purpose                                                     |                 Link |
-| :---------: | :---------------------------------------------------------- | -------------------: |
-|   AWS CLI   | AWS Authentication and connecting<br>to the created cluster | [Site][aws cli site], [Docs][aws cli docs] |
-|   eksctl    | Initial cluster creation                                    |  [Docs][eksctl docs] |
-
-<!-- Add more details to list here to include the purpose of included technology -->
+| Local Tools | Purpose                                                          |                                       Link |
+| :---------: | :--------------------------------------------------------------- | -----------------------------------------: |
+|   AWS CLI   | AWS Authentication and connecting to the created cluster         | [Site][aws cli site], [Docs][aws cli docs] |
+|   eksctl    | Initial cluster creation                                         |                        [Docs][eksctl docs] |
+|   kubectl   | Kubernetes CLI                                                   |                       [Docs][kubectl docs] |
+|     k9s     | (Optional) Kubernetes CLI wrapper, improves usability of kubectl |                           [Docs][k9s docs] |
+|     helm     | Kubernetes package manager |                           [Docs][helm site] |
 
 ## Guide
 
@@ -34,11 +35,15 @@ The guide leverages the [Makefile][repo-makefile] in this repository to simplify
 
 The project was primarily put together by a small team and thus there are few limitations to be aware of if you chose to follow in its footsteps.
 
-- Autoscaling - Ideally [Karpenter][karpenter] or another cluster autoscaler would be implemented on the cluster so that as more nodes are required the cluster scales up without manual intervention. This was skipped during the initial implementation due to time constraints.
-- Clouds - The implementation here is not explicitly AWS based, since most of the configuration resides within Kubernetes itself with non-specific resources, it has however not been tested on providers besides [EKS][eks].
-
+- **Clouds** - The implementation here is not explicitly AWS based, since most of the configuration resides within Kubernetes itself with non-specific resources, it has however not been tested on providers besides [EKS][eks].
+- **Autoscaling** - Ideally [Karpenter][karpenter] or another cluster autoscaler would be implemented on the cluster so that as more nodes are required the cluster scales up without manual intervention. This was skipped during the initial implementation due to time constraints.
+- **Continuous Deployment** - The implementation here is done with a series of manually run commands. In a long term production environment, it is recommended that these kinds of actions are managed by automation. This was skipped since the cluster we were working on, we knew had an expiration date and speed of operations was a higher priority than a fully functioning
+  - Using [ArgoCD][argocd docs] to manage the cluster's deployments would provide some more generalized observability and change tracking with [GitOps][what is gitops], especially if regularly updated services are going to be included in the cluster.
+- **Infrastructure as Code (IaC)** - While this repository is arguably Infrastructure as Code, a series of Makefile scripts does not maintain state like [Terraform][terraform site] or reconcile to correct drift like [Crossplane][crossplane site], making infrastructure created in this way vulnerable to impatient engineers changing things in a cloud provider's UI.
+  - In an organization where clusters are being created frequently, or across different cloud providers, a tool like [ClusterAPI][cluster api docs] could prove useful as well.
 
 <!-- LINKS -->
+
 [btv]: https://blueteamvillage.org/
 [defcon]: https://defcon.org/
 [btv-discord]: https://discord.gg/DnJTCZcT
@@ -53,3 +58,11 @@ The project was primarily put together by a small team and thus there are few li
 [cilium site]: https://cilium.io/
 [cilium docs]: https://docs.cilium.io/en/stable/
 [tetragon docs]: https://tetragon.io/docs/
+[kubectl docs]: https://kubernetes.io/docs/tasks/tools/
+[k9s docs]: https://k9scli.io/
+[argocd docs]: https://argo-cd.readthedocs.io/en/stable/
+[cluster api docs]: https://cluster-api.sigs.k8s.io/
+[what is gitops]: https://about.gitlab.com/topics/gitops/
+[terraform site]: https://www.terraform.io/
+[crossplane site]: https://www.crossplane.io/
+[helm site]: https://helm.sh/

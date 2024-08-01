@@ -2,7 +2,7 @@
 ### Create the Kubernetes Cluster
 `make eks-cluster-create`
 
-The initial cluster setup closely resembles the [Cilium Quick Start guide][cilium quick start] if you'd rather start there, we'll highlight any differences here.
+The initial cluster setup closely resembles the [Cilium Quick Start guide][cilium quick start] if you'd rather start there, we'll highlight any differences here. Note that this guide will be using [Helm][helm site] instead of the cilium cli, more information in the [Install Cilium](#install-cilium).
 
 Compared to Cilium Quick Start:
 * We assign a `desiredCapacity` of `3` instead of `2`
@@ -14,11 +14,14 @@ Compared to Cilium Quick Start:
 ### Connect to Cluster
 `make eks-cluster-kubeconfig`
 
+With the cluster up and running the next thing we need to do is update our local [kubeconfig][kubeconfig docs], so we can connect to the cluster when we use `kubectl` (and `k9s` if you choose to).
 
-<!-- ### Install Cilium -->
+### Install Cilium {#install-cilium}
 
 
 
 <!-- LINKS -->
 [cilium quick start]: https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/
 [amazon ec2 instance types]: https://aws.amazon.com/ec2/instance-types/
+[kubeconfig docs]: https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/
+[helm site]: https://helm.sh/
