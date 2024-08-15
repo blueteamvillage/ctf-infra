@@ -1,10 +1,11 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: cilium-stack-walkthrough
+  name: 
   region: us-west-2
+  version: 
 managedNodeGroups:
-- name: ng-1
+- name: -ng-1
   privateNetworking: true
   taints: 
   - key: "node.cilium.io/agent-not-ready"

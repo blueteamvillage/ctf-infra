@@ -18,6 +18,8 @@ This repository represents the culmination of that work, so that others can repl
 | :------: | :--------------------------------------------------- | ---------------------------------------: |
 |  Cilium  | e-BPF Container Network Interface                    | [Site][cilium site], [Docs][cilium docs] |
 | Tetragon | e-BPF Security observability and runtime enforcement |                    [Docs][tetragon docs] |
+|  |  |                    [Docs][] |
+<!-- |  |  |                    [Docs][] | -->
 
 | Local Tools | Purpose                                                          |                                       Link |
 | :---------: | :--------------------------------------------------------------- | -----------------------------------------: |
@@ -25,7 +27,7 @@ This repository represents the culmination of that work, so that others can repl
 |   eksctl    | Initial cluster creation                                         |                        [Docs][eksctl docs] |
 |   kubectl   | Kubernetes CLI                                                   |                       [Docs][kubectl docs] |
 |     k9s     | (Optional) Kubernetes CLI wrapper, improves usability of kubectl |                           [Docs][k9s docs] |
-|     helm     | Kubernetes package manager |                           [Docs][helm site] |
+|    helm     | Kubernetes package manager                                       |                          [Docs][helm site] |
 
 ## Guide
 
@@ -49,7 +51,6 @@ The project was primarily put together by a small team and thus there are few li
 [btv-discord]: https://discord.gg/DnJTCZcT
 [repo-makefile]: ./Makefile
 [repo-guide]: ./GUIDE.md
-[kubernetes node taints]: https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
 [karpenter]: https://karpenter.sh/
 [eks]: https://aws.amazon.com/eks/
 [aws cli site]: https://aws.amazon.com/cli/
