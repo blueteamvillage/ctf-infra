@@ -1,0 +1,49 @@
+# https://docs.cilium.io/en/stable/installation/k8s-install-helm/
+eni:
+  enabled: true
+ipam:
+  mode: eni
+egressMasqueradeInterfaces: eth0
+routingMode: native
+
+# # https://docs.cilium.io/en/latest/observability/metrics/#hubble-metrics
+# clustermesh:
+#   apiserver:
+#     metrics:
+#       enabled: true
+#       etcd:
+#         enabled: true
+#       kvstoremesh:
+#         enabled: true
+#   useAPIServer: true
+
+# # https://docs.cilium.io/en/stable/gettingstarted/hubble_setup/#hubble-setup
+# hubble:
+#   enabled: true
+#   relay:
+#     enabled: true
+#   ui:
+#     enabled: true 
+#   export:
+#     fileMaxBackups: 5
+#     fileMaxSizeMb: 10
+#     static:
+#       enabled: true
+#       filePath: /var/run/cilium/hubble/events.log     
+#   metrics:
+#     enableOpenMetrics: true
+
+
+
+
+####
+# BTV - We set the dnsPolicy to "ClusterFirstWithHostNet" because we ended up including Arkime, as a sidecar to the Cilium Daemonset, after we our initial Cilium setup so that Arkime's capture function could make calls to OpenSearch running in the cluster using the standard Kubernetes Service DNS.
+# This has been included for completeness, it is commented out since our final implementation was not sastificatory for release.
+
+# Related links:
+## https://arkime.com/
+## https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/
+## https://opensearch.org/docs/latest/
+## https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#a-aaaa-records
+####
+# dnsPolicy: ClusterFirstWithHostNet

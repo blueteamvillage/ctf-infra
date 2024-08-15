@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: ${CLUSTER_NAME}
+  region: us-west-2
+  version: ${CLUSTER_VERSION}
+managedNodeGroups:
+- name: ${CLUSTER_NAME}-ng-1
+  privateNetworking: true
+  taints: 
+  - key: "node.cilium.io/agent-not-ready"
+    value: "true"
+    effect: "NoExecute"
+  desiredCapacity: 3
+  minSize: 3
+  maxSize: 4
