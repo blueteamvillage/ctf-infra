@@ -1,0 +1,5 @@
+# podAnnotations:
+# ## Datadog agent has configuration that will automatically include non-standard data in their collection 
+# ## https://docs.datadoghq.com/containers/kubernetes/integrations/?tab=annotations
+#   ad.datadoghq.com/export-stdout.logs: |-
+#     [{"source": "export-stdout", "service": "tetragon"}]

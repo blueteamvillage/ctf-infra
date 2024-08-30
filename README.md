@@ -1,6 +1,6 @@
-# cilium-stack
+# CTF-Infra
 
-A walkthrough of the Cilium/Tetragon stack with Observability implemented.
+A walkthrough of the Blue Team Village's CTF contest infrastructure. _If you came here looking for the answers sorry._
 
 ## Purpose
 

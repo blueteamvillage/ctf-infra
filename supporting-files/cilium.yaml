@@ -7,7 +7,7 @@ hubble:
   ui:
     enabled: true
   metrics:
-    # enabled set at cli level, check Makefile (the value has a bit of funky format and we were not able to get it working as expected)
+    # "enabled" set at cli level, check Makefile (the value has a bit of funky format and we were not able to get it working as expected)
     enableOpenMetrics: true
   export:
     static: 

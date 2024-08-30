@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug
+  labels:
+    app: debug
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: debug
+  template:
+    metadata:
+      labels:
+        app: debug
+    spec:
+      containers:
+      - name: alpine
+        image: alpine:3.18
+        command:
+        - /bin/sh
+        - -c
+        args:
+        - |-
+          apk add curl jq bash
+          sleep infinity
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 100m
