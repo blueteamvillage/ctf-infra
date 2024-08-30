@@ -1,0 +1,28 @@
+ipam:
+  mode: kubernetes
+
+hubble:
+  relay:
+    enabled: true
+  ui:
+    enabled: true
+  metrics:
+    # enabled set at cli level, check Makefile (the value has a bit of funky format and we were not able to get it working as expected)
+    enableOpenMetrics: true
+  export:
+    static: 
+      enabled: true
+      filePath: /var/run/cilium/hubble/events.log
+    fileMaxSizeMb: 10
+    fileMaxBackups: 5
+
+clustermesh:
+  useAPIServer: true
+  apiserver:
+    metrics:
+      enabled: true
+      kvstoremesh:
+        enabled: true
+      etcd:
+        enabled: true
+

@@ -18,7 +18,7 @@ With the cluster up and running the next thing we need to do is update our local
 
 ### Install Cilium
 
-
+_life has gotten busy, so in order to push to get the code out there, the guides will not be as detailed as above and the [Kind](../kind/README.md) guide has been prioritized, expect updates in the future to this guide so that it is completed_
 
 <!-- LINKS -->
 [cilium quick start]: https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/
