@@ -29,7 +29,7 @@ This repository represents the culmination of that work, so that others can repl
 
 ## Guide
 
-The guide leverages the [Makefile][repo-makefile] in this repository to simplify how the commands are being presented. The Makefile is in order of the commands being run, to get an in-depth walkthrough of the setup go ahead and checkout the [Guide][repo-guide].
+The guide leverages the [Makefile](https://github.com/blueteamvillage/ctf-infra/blob/main/kind/Makefile) in this repository to simplify how the commands are being presented. The Makefile is in order of the commands being run, to get an in-depth walkthrough of the setup go ahead and checkout the [Guide](https://github.com/blueteamvillage/ctf-infra/blob/main/kind/README.md).
 
 ## Known limitations
 
